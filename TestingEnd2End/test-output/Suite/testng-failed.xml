@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="TestNgSupportFeatures.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="TestCases.NewsPageTest">
+        <methods>
+          <include name="TearDown"/>
+          <include name="SubmitCorrectEmailTest"/>
+          <include name="Setup"/>
+        </methods>
+      </class> <!-- TestCases.NewsPageTest -->
+      <class name="TestCases.SignInPageTest">
+        <methods>
+          <include name="SignInPageTitleTest"/>
+          <include name="IsCheckBoxDisplayesdTest"/>
+          <include name="SignInTest"/>
+          <include name="tearDown"/>
+          <include name="NegativeSignInTest"/>
+          <include name="Initialize"/>
+        </methods>
+      </class> <!-- TestCases.SignInPageTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

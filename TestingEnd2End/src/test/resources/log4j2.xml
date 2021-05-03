@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Properties>
+		<!-- The basePath is the path till C:\Users\Himanshu\eclipse-workspace\\TestingEnd2End. 
+			the rest of the path is defined after that just before prints.log file -->
+
+		<Property name="basePath">./Logs</Property>
+	</Properties>
+	<!-- Within appenders tag you can define place where the logs needs to be 
+		printed. -->
+	<!-- below 2 paths are given : console and a text file. -->
+
+
+
+
+	<!-- within appender tag we define where to log eg. console or file or both -->
+	<Appenders>
+		<!-- here the base path is till Logs folder as defined above -->
+		<RollingFile name="File" fileName="${basePath}/Prints.log"
+			filePattern="${basePath}/Prints-%d{yyyy-MM-dd}.log">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+			<!-- a new file will be created if the file size is greater then 500 bytes -->
+			<SizeBasedTriggeringPolicy size="5000" />
+		</RollingFile>
+
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+
+	</Appenders>
+
+
+
+	<!-- Logger decides what to log -->
+	<Loggers>
+		<!-- logger name should be the class name -->
+		<!-- additivityis given false so that it does not print twice -->
+		
+<!-- 		<Logger name="TestCases" level="trace"
+			additivity="false">
+			<AppenderRef ref="Console" />
+		</Logger>
+
+		<Logger name="Pages" level="trace" additivity="false">
+			<AppenderRef ref="Console" />
+		</Logger> -->
+
+		<!-- root level is applicable to entire project -->
+		<!-- we will define level. if level is error then it will log only error messages -->
+		<!-- level is 'trace' then it will log everything -->
+		<!-- AppenderRef: where to log -->
+		<Root level="trace">
+			<AppenderRef ref="File" />
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+
+
+
+
+</Configuration>
