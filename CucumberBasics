@@ -21,13 +21,15 @@ Then login should be successful
 
 ##Tags
 Cucumber by default runs all scenarios in all the feature files. In real time projects, there could be hundreds of feature 
-file which are not required to run at all times.
+file which are not required to run at all times. So how to manage execution in such cases, Cucumber has provided a way to organize
+your scenario execution by using tags in feature file. 
+
 
 #2. Step Definitions
 Now that the features and their scenarios are written in the feature files, the code for the related scenario has to be run. To know which batch of code needs to 
 be run for a given scenario, Steps Definitions come into the picture. A Steps Definitions file stores the mapping data between each step of 
 a scenario defined in the feature file and the code to be executed.
-
+Then to target these tagged scenarios just specify the tags names in the CucumberOptions as tags = {“@SmokeTests”}.
 Sample : 
 public class StepDefinition {
   
