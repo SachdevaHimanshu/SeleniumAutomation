@@ -17,3 +17,8 @@ Scenario: Login Functionality
 Given user navigates to SOFTWARETETINGHELP.COM
 When user logs in using Username as “USER” and Password “PASSWORD”
 Then login should be successful
+
+#2. Step Definitions
+Now that the features and their scenarios are written in the feature files, the code for the related scenario has to be run. To know which batch of code needs to 
+be run for a given scenario, Steps Definitions come into the picture. A Steps Definitions file stores the mapping data between each step of 
+a scenario defined in the feature file and the code to be executed.
