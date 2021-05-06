@@ -32,7 +32,7 @@ public class StepDefinition extends TestBase {
 //	{
 //		super();
 //	}
-
+	 //The code present in @Before annotation of Cucumber will run before each scenario mentioned within the feature file.
 	@Before
 	public void Initialize() throws IOException {
 		InitializeDriver();
