@@ -8,13 +8,12 @@ import java.io.IOException;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
+
 
 import Base.TestBase;
 import WebPages.HomePage;
 import WebPages.SignInPage;
-import cucumber.api.PendingException;
+
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -34,9 +33,10 @@ public class StepDefinition extends TestBase {
 //		super();
 //	}
 
-	@BeforeMethod
+	@Before
 	public void Initialize() throws IOException {
 		InitializeDriver();
+		System.out.println("Here");
 		SignInPage = new SignInPage();
 	}
 
@@ -80,10 +80,18 @@ public class StepDefinition extends TestBase {
 	@Then("^Error message should be displayed$")
 	public void Error_message_displayed() throws Throwable {
 
-		AssertJUnit.assertFalse(SignInPage.errorMessageISDisplayed());
+		AssertJUnit.assertTrue(SignInPage.errorMessageISDisplayed());
 	}
 
-	@AfterMethod
+	@When("^User enters Username as \"(.*?)\" and Password as \"(.*?)\"$")
+	public void user_enters_Username_as_and_Password_as(String arg1, String arg2) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		SignInPage.EnterUsername(arg1);
+		SignInPage.EnterPassword(arg2);
+	}
+
+	
+	@After
 	public void tearDown(Scenario scenario){
 	    if (scenario.isFailed()) 
 	    {

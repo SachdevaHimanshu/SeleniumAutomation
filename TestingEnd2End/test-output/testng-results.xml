@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-03T10:10:48 IST" name="Default suite" finished-at="2021-05-03T10:11:14 IST" duration-ms="25491">
+  <suite started-at="2021-05-06T15:03:48 IST" name="Default suite" finished-at="2021-05-06T15:04:16 IST" duration-ms="27940">
     <groups>
     </groups>
-    <test started-at="2021-05-03T10:10:48 IST" name="Default test" finished-at="2021-05-03T10:11:14 IST" duration-ms="25491">
+    <test started-at="2021-05-06T15:03:48 IST" name="Default test" finished-at="2021-05-06T15:04:16 IST" duration-ms="27940">
       <class name="TestCases.SignInPageTest">
-        <test-method is-config="true" signature="Setup()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-03T10:10:48 IST" name="Setup" finished-at="2021-05-03T10:10:53 IST" duration-ms="4804" status="PASS">
+        <test-method is-config="true" signature="Setup()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-06T15:03:48 IST" name="Setup" finished-at="2021-05-06T15:03:52 IST" duration-ms="3845" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method signature="IsCheckBoxDisplayesdTest()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-03T10:10:53 IST" name="IsCheckBoxDisplayesdTest" finished-at="2021-05-03T10:10:54 IST" duration-ms="432" status="FAIL">
+        <test-method signature="IsCheckBoxDisplayesdTest()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-06T15:03:52 IST" name="IsCheckBoxDisplayesdTest" finished-at="2021-05-06T15:03:52 IST" duration-ms="461" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [false] but found [true]]]>
@@ -57,43 +57,43 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- IsCheckBoxDisplayesdTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-03T10:10:54 IST" name="tearDown" finished-at="2021-05-03T10:10:54 IST" duration-ms="730" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-06T15:03:52 IST" name="tearDown" finished-at="2021-05-06T15:03:53 IST" duration-ms="750" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="Setup()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-03T10:10:54 IST" name="Setup" finished-at="2021-05-03T10:11:00 IST" duration-ms="5229" status="PASS">
+        <test-method is-config="true" signature="Setup()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-06T15:03:53 IST" name="Setup" finished-at="2021-05-06T15:03:59 IST" duration-ms="5687" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method signature="NegativeSignInTest()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-03T10:11:00 IST" name="NegativeSignInTest" finished-at="2021-05-03T10:11:01 IST" duration-ms="1306" status="PASS">
+        <test-method signature="NegativeSignInTest()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-06T15:03:59 IST" name="NegativeSignInTest" finished-at="2021-05-06T15:04:01 IST" duration-ms="1889" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- NegativeSignInTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-03T10:11:01 IST" name="tearDown" finished-at="2021-05-03T10:11:02 IST" duration-ms="752" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-06T15:04:01 IST" name="tearDown" finished-at="2021-05-06T15:04:02 IST" duration-ms="857" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="Setup()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-03T10:11:02 IST" name="Setup" finished-at="2021-05-03T10:11:06 IST" duration-ms="4341" status="PASS">
+        <test-method is-config="true" signature="Setup()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-06T15:04:02 IST" name="Setup" finished-at="2021-05-06T15:04:07 IST" duration-ms="4983" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method signature="SignInPageTitleTest()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-03T10:11:06 IST" name="SignInPageTitleTest" finished-at="2021-05-03T10:11:06 IST" duration-ms="4" status="PASS">
+        <test-method signature="SignInPageTitleTest()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-06T15:04:07 IST" name="SignInPageTitleTest" finished-at="2021-05-06T15:04:07 IST" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SignInPageTitleTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-03T10:11:06 IST" name="tearDown" finished-at="2021-05-03T10:11:07 IST" duration-ms="742" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-06T15:04:07 IST" name="tearDown" finished-at="2021-05-06T15:04:07 IST" duration-ms="743" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="Setup()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-03T10:11:07 IST" name="Setup" finished-at="2021-05-03T10:11:11 IST" duration-ms="4358" status="PASS">
+        <test-method is-config="true" signature="Setup()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-06T15:04:07 IST" name="Setup" finished-at="2021-05-06T15:04:11 IST" duration-ms="3923" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method signature="SignInTest()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-03T10:11:11 IST" name="SignInTest" finished-at="2021-05-03T10:11:13 IST" duration-ms="1900" status="PASS">
+        <test-method signature="SignInTest()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-06T15:04:11 IST" name="SignInTest" finished-at="2021-05-06T15:04:15 IST" duration-ms="3852" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SignInTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-03T10:11:13 IST" name="tearDown" finished-at="2021-05-03T10:11:14 IST" duration-ms="770" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.SignInPageTest@6a84a97d]" started-at="2021-05-06T15:04:15 IST" name="tearDown" finished-at="2021-05-06T15:04:16 IST" duration-ms="863" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
