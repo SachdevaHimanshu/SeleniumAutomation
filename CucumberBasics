@@ -1,1 +1,19 @@
 #Cucumber
+Cucumber is a testing tool that supports Behavior Driven Development (BDD). It allows automation of functional validation in easily readable 
+and understandable format (like plain English)(Gerkin) to Business Analysts, Developers, Testers, etc.
+Cucumber Basics
+In order to understand cucumber, we need to know all the features of cucumber and its usage.
+#1) Feature Files:
+A standalone unit or a single functionality (such as a login) for a project can be called a Feature. Each of these features
+will have scenarios that must be tested using Selenium integrated with Cucumber. A file that stores data about features, 
+their descriptions, and the scenarios to be tested, is called a Feature File. Extension : Login.feature
+
+Description: The user shall be able to login upon entering the correct username and password in the correct fields. 
+The user should be directed to the homepage if the username and password entered are correct.
+
+Sample feature file for login feature: In order to ensure Login Functionality works, I want to run the cucumber test to verify it is working
+Feature: Login Functionality Feature
+Scenario: Login Functionality
+Given user navigates to SOFTWARETETINGHELP.COM
+When user logs in using Username as “USER” and Password “PASSWORD”
+Then login should be successful
