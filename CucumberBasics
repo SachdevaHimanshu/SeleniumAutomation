@@ -1,6 +1,6 @@
 #Cucumber
 Cucumber is a testing tool that supports Behavior Driven Development (BDD). It allows automation of functional validation in easily readable 
-and understandable format (like plain English)(Gerkin) to Business Analysts, Developers, Testers, etc.
+and understandable format (like plain English)(gherkin) to Business Analysts, Developers, Testers, etc.
 Cucumber Basics
 In order to understand cucumber, we need to know all the features of cucumber and its usage.
 #1) Feature Files:
@@ -22,3 +22,45 @@ Then login should be successful
 Now that the features and their scenarios are written in the feature files, the code for the related scenario has to be run. To know which batch of code needs to 
 be run for a given scenario, Steps Definitions come into the picture. A Steps Definitions file stores the mapping data between each step of 
 a scenario defined in the feature file and the code to be executed.
+
+Sample : 
+public class StepDefinition {
+  
+  //The code present in @Before annotation of Cucumber will run before each scenario mentioned within the feature file.
+  @Before
+	public void Setup() throws IOException {
+	
+	}
+  
+	@Given("^User is on SignIn Page$")
+	public void user_is_on_SignIn_Page() throws Throwable {
+  //Call the code 
+	}
+
+	@When("^user enters username and password and clicks on submit button$")
+	public void user_enters_username_and_password() throws Throwable {
+  //call the code to enter username and password
+	}
+
+	@Then("^user is navigated to Home Page$")
+	public void user_is_navigated_to_Home_Page() throws Throwable {
+  //call the code
+	}
+  //If a step within a scenario fails then Code within @After annotation will be executed hence 'taking screenshot' code is present in it.
+  //The Screenshot taken will be embedded in the Cucumber report.
+  @After
+	public void tearDown(Scenario scenario){
+	    if (scenario.isFailed()) 
+	    {
+	      // Take a screenshot...
+	        final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+	     // embed it in the report.
+	        scenario.embed(screenshot, "image/png"); 
+	    }
+	    driver.quit();
+	  }
+
+
+
+
+}
