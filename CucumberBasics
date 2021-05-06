@@ -22,7 +22,11 @@ Then login should be successful
 ##Tags
 Cucumber by default runs all scenarios in all the feature files. In real time projects, there could be hundreds of feature 
 file which are not required to run at all times. So how to manage execution in such cases, Cucumber has provided a way to organize
-your scenario execution by using tags in feature file. 
+your scenario execution by using tags in feature file. ag starts with “@”eg: @SmokeTests just above the scenarios you like to mark.
+Then to target these tagged scenarios just specify the tags names in the CucumberOptions as tags = {“@SmokeTests”}.
+
+Tagging not just specifically works with Scenarios, it also works with Features. Means you can also tag your features files. 
+Any tag that exists on a Feature will be inherited by Scenario, Scenario Outline or Examples.
 
 
 #2. Step Definitions
