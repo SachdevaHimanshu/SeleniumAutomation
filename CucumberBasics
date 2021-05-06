@@ -3,6 +3,7 @@ Cucumber is a testing tool that supports Behavior Driven Development (BDD). It a
 and understandable format (like plain English)(gherkin) to Business Analysts, Developers, Testers, etc.
 Cucumber Basics
 In order to understand cucumber, we need to know all the features of cucumber and its usage.
+
 #1) Feature Files:
 A standalone unit or a single functionality (such as a login) for a project can be called a Feature. Each of these features
 will have scenarios that must be tested using Selenium integrated with Cucumber. A file that stores data about features, 
@@ -18,6 +19,10 @@ Given user navigates to SOFTWARETETINGHELP.COM
 When user logs in using Username as “USER” and Password “PASSWORD”
 Then login should be successful
 
+##Tags
+Cucumber by default runs all scenarios in all the feature files. In real time projects, there could be hundreds of feature 
+file which are not required to run at all times.
+
 #2. Step Definitions
 Now that the features and their scenarios are written in the feature files, the code for the related scenario has to be run. To know which batch of code needs to 
 be run for a given scenario, Steps Definitions come into the picture. A Steps Definitions file stores the mapping data between each step of 
@@ -26,29 +31,29 @@ a scenario defined in the feature file and the code to be executed.
 Sample : 
 public class StepDefinition {
   
-  //The code present in @Before annotation of Cucumber will run before each scenario mentioned within the feature file.
-  @Before
+  	//The code present in @Before annotation of Cucumber will run before each scenario mentioned within the feature file.
+  	@Before
 	public void Setup() throws IOException {
 	
 	}
   
 	@Given("^User is on SignIn Page$")
 	public void user_is_on_SignIn_Page() throws Throwable {
-  //Call the code 
+  	//Call the code 
 	}
 
 	@When("^user enters username and password and clicks on submit button$")
 	public void user_enters_username_and_password() throws Throwable {
-  //call the code to enter username and password
+  	//call the code to enter username and password
 	}
 
 	@Then("^user is navigated to Home Page$")
 	public void user_is_navigated_to_Home_Page() throws Throwable {
-  //call the code
+  	//call the code
 	}
-  //If a step within a scenario fails then Code within @After annotation will be executed hence 'taking screenshot' code is present in it.
-  //The Screenshot taken will be embedded in the Cucumber report.
-  @After
+  	//@After will execute after every scenario even if Step within a scenario fails then Code within @After annotation will be execute.
+	//Hence 'taking screenshot' code is present in it.The Screenshot taken will be embedded in the Cucumber report.
+  	@After
 	public void tearDown(Scenario scenario){
 	    if (scenario.isFailed()) 
 	    {
@@ -59,8 +64,26 @@ public class StepDefinition {
 	    }
 	    driver.quit();
 	  }
-
-
-
-
 }
+
+#3. Test Runner File
+To run the test, one needs a Test Runner File, which is a JUnit Test Runner Class containing the Step Definition location 
+and the other primary metadata required to run the test.
+
+eg:
+@RunWith(Cucumber.class)
+@CucumberOptions(
+features = "src/test/resources/Features"
+,glue={"src/main/stepDefinition"}
+,format = {"pretty", "html:target/Destination"}
+)
+
+public class TestRunner {
+}
+
+Best Practices in Cucumber Testing
+1. The versions of Cucumber-java, Cucumber-junit, and Cucumber-core jars should be the same for seamless connectivity.
+2. Adding an @After hook to the code for capturing screenshots when the test fails can help diagnose the issue and debug it.
+3. Use Tags for organizing tests based on tag definition. This helps in cases where all tests don’t have to be run every time.
+Such tests can be marked using tags and run only when required. This saves time and processing capacity of the system and resources.
+
