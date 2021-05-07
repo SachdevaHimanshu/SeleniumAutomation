@@ -1,0 +1,43 @@
+#Page Object Model in Selenium
+Page Object Model or POM  is a design pattern in Selenium, where web pages are represented as classes, and the various elements 
+on the page are defined as variables on the class. All possible user interactions can then be implemented as methods on the class: clickLoginButton();
+
+In order to support Page Object model, we use Page Factory. Page Factory in Selenium is an extension to Page Object and can be used in various ways. 
+In this case we will use Page Factory to initialize web elements that are defined in web page classes or Page Objects.
+
+Web page classes or Page Objects containing web elements need to be initialized using Page Factory before the web element variables can be used. 
+This can be done simply through the use of initElements function on PageFactory:
+e.g 
+public SignInPage() {
+		PageFactory.initElements(driver, this); // 'this' means current Page class as object. 
+	}
+
+Page Factory will initialize every WebElement variable with a reference to a corresponding element on the actual web page based on configured “locators”. 
+This is done through the use of @FindBy annotations. With this annotation, we can define a strategy for looking up the element, along with the necessary 
+information for identifying it:
+e.g 
+//Webelement represented as a Variable in Signin.java Class
+@FindBy(xpath = "//*[@id=\"txtlogin\"]")
+WebElement usernameTextBox;
+
+//Action on the web page is represented as a method in Signin.java Class
+public void EnterUsername(String username) {
+		usernameTextBox.sendKeys(username);
+	}
+  
+Moving on, you will often come across situations where you need to find a list of elements on a page, and that is when @FindBys comes in handy:
+@FindBys(@FindBy(css=”div[class=’yt-lockup-tile yt-lockup-video’]”)))
+private List<WebElement> videoElements;
+
+The above code will find all the div elements having two class names “yt-lockup-tile” and “yt-lockup-video”.
+
+Additionally, you can use @FindAll with multiple @FindBy annotations to look for elements that match any of the given locators:
+@FindAll({@FindBy(how=How.ID, using=”username”),
+	@FindBy(className=”username-field”)})
+private WebElement user_name;
+
+
+
+
+Note: Visit website for more details:
+https://www.toptal.com/selenium/test-automation-in-selenium-using-page-object-model-and-page-factory
