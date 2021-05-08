@@ -8,10 +8,10 @@ Type of Parameterization in TestNG-
 
 1. With the help of  @Parameters annotation and TestNG XML file.
 
-  @Parameters({"URL","Username","Pin"})
-	@Test
-	public void Demo(String URL, String username, Integer pin)
-	{
-		System.out.println(URL + Username + Pin);s
-	}
+@Parameters({"URL","Username","Pin"})
+@Test
+public void Demo(String URL, String username, Integer pin)
+{
+	System.out.println(URL + Username + Pin);s
+}
 
