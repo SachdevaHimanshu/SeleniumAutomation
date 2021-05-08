@@ -1,0 +1,17 @@
+Parameterization in Selenium
+Parameterization is passing different set of values to the test script or functions at the run time.
+Many a times a particular funtionality or feature (Eg Login) has to be tested with multiple set of values hence the test script of that 
+funtionality or feature is passed with all permutations and combinations of those values.
+This way the we automatically runs test cases multiple times using different values.
+
+Type of Parameterization in TestNG-
+
+1. With the help of  @Parameters annotation and TestNG XML file.
+
+  @Parameters({"URL","Username","Pin"})
+	@Test
+	public void Demo(String URL, String username, Integer pin)
+	{
+		System.out.println(URL + Username + Pin);s
+	}
+
