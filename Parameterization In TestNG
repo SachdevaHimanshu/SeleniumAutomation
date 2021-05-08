@@ -10,8 +10,31 @@ Type of Parameterization in TestNG-
 
 @Parameters({"URL","Username","Pin"})
 @Test
-public void Demo(String URL, String username, Integer pin)
+public void Login(String URL, String username, Integer pin)
 {
-	System.out.println(URL + Username + Pin);s
+	System.out.println(URL + Username + Pin);
 }
 
+Provide below lines in TestNG xml file.
+<suite name="Suite">
+	<parameter name="URL" value="https://www.amazon.in/"></parameter>
+	
+	<test name="Test1">
+		<parameter name="Username" value="Sachdevahimanshu21"></parameter>
+		<parameter name="Pin" value="2112"></parameter>
+		<classes>
+			<class name="Test.Login" />
+		</classes>
+	</test>
+	
+	<test name="Test2">
+		<parameter name="Username" value="Sachdevahimanshu21"></parameter>
+		<parameter name="Pin" value="2112"></parameter>
+		<classes>
+			<class name="Test.Login" />
+		</classes>
+	</test> 
+	
+</suite> <!-- Suite -->
+
+Explanation:
