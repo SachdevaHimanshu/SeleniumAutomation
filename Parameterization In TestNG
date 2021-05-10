@@ -7,7 +7,7 @@ This way the we automatically runs test cases multiple times using different val
 Type of Parameterization in TestNG-
 
 1. With the help of  @Parameters annotation and TestNG XML file.
-#Here we pass value from the .xml file to the method as an argument.
+#Here we pass value from the .xml file to the method as an argument in run time.
 
 @Parameters({"URL","Username","Pin"})
 @Test
@@ -42,6 +42,9 @@ Explanation: The method Login will run thrice as per the configuration in .xml f
 Note: @Parameter is convenient to be used when a parameter needs to be passed to the code that does not change through out.
 like the URL. If mutiple values are required to be passed it is better to use @DataProvider.
 
+Note: Parameters can be placed in suite level and test level in the xml file. If
+The Same parameter name is declared in both places; test level parameter will get preference over suit level parameter.
+
 1. With the help of @Dataprovider annotation.
 It has only one attribute 'name'. If you do not specify the name attribute then the DataProvider's name will be same as the corresponding method name.
 Data provider returns a two-dimensional JAVA object (Object [M][N] )to the test method.
@@ -63,3 +66,4 @@ Where M is the number of times the values will be provided and N is the number o
 		System.out.println(Username + Password);
 	}
 Important points:
+
