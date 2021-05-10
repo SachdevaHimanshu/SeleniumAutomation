@@ -18,9 +18,60 @@ Attributes associated with the TestNG annotation are:
    =>Also, remember that the groups defined in <test> tag apply to only that particular test tag, but the groups defined in <suite> tag 
    apply to all the <test> tags in the XML file.
    
-   e.g 
-   
+   e.g Suppose we have 2 .java class 
+     1. HomeLoanTest and 2. CarLoanTest
+     
+      public class HomeLoanTest 
+      {
+         Test(groups = {"Mobile login","HomeLoan"})
+         public void HomeLoanMObileLogin()
+         {
+            System.out.println("Testing HomeLoanMObileLogin");
+         }
 
+         @Test(groups = {"HomeLoan"})
+         public void HomeLoanWebLogin()
+         {
+            System.out.println("Testing HomeLoanWebLogin");
+         }
+      }
+   
+   public class CarLoanTest {
+	
+      @Test(groups = "Mobile login")
+      public void CarLoanMObileLogin()
+      {
+         System.out.println("Testing CarLoanMObileLogin");
+      }
+
+      @Test(groups = {"Web login"})
+      public void CarLoanWebLogin()
+      {
+         System.out.println("Testing CarLoanWebLogin");
+      }
+	}
+   
+   
+   ==>.xml file
+   <suite name="Suite">
+	<test thread-count="5" name="Test">
+		<groups>
+			<run>
+				<include name="Mobile login" />
+				<include name="HomeLoan" />
+			</run>
+		</groups>
+
+		<classes>
+			<class name="Test.HomeLoanTest"></class>
+			<class name="Test.CarLoanTest"></class>
+		</classes>
+		
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
+
+Explanation: the <Groups> tag are mentioned inside <Test> Tag. This .xml file will execute @test menthods belonging to group "Mobile login" and "HomeLoan" from 
+class HomeLoanTest and CarLoanTest.
 
 Other annotations are :
 @BeforeMethod and @AfterMethod – These annotations run before and after each test method.
