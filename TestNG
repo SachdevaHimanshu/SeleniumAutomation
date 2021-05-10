@@ -1,10 +1,16 @@
 TestNG is a powerful testing framework, an enhanced version of JUnit. NG stands for 'Next Generation'.
 
 #TestNG provides Powerful and wide variety of annotations to support your test cases.
-Annotations are placed just above the methods. Annotations describes and defines how the methods below them will be executed.
+Annotations are placed just above the methods. Annotations describes and defines how the methods will be executed.
 
 #@Test The most important annotation in TestNG framework all the functionalities that needs to be tested are kept inside the @Test annotation method.
 
+Other annotations are :
+@BeforeMethod and @AfterMethod – These annotations run before and after each test method.
+@BeforeClass and @AfterClass – These annotations run once before and after the first @test method in a class
+@BeforeTest and @AfterTest – The BeforeTest annotation runs before the @BeforeClass annotation and the AfterTest annotation runs after the @AfterClass annotation
+@BeforeSuite and @AfterSuite– These annotations run before and after all tests in a suite have run.
+These annotations start the beginning of a test and the end of it, for all the classes in a suite.
 
 TestNG contains a hierarchy among the annotations. This hierarchy is as follows (top being the highest priority):
 
@@ -18,15 +24,11 @@ TestNG contains a hierarchy among the annotations. This hierarchy is as follows 
 @AfterTest
 @AfterSuite
 
-@BeforeMethod and @AfterMethod – These annotations run before and after each test method
-@BeforeClass and @AfterClass – These annotations run once before and after the first @test method in a class
-@BeforeTest and @AfterTest – The BeforeTest annotation runs before the @BeforeClass annotation and the AfterTest annotation runs after the @AfterClass annotation
-@BeforeSuite and @AfterSuite– These annotations run before and after any test annotated method in a class respectively. 
-These annotations start the beginning of a test and the end of it, for all the classes in a suite
+
 
 Additonal Annotations:
-@DataProvider: Marks a method as supplying data for a test method. The annotated method must return an Object[ ][ ], where each Object[ ] can be assigned the parameter 
-list of the test method. The @Test method that wants to receive data from this DataProvider needs to use a dataProvider name equals to the name of this annotation.
+1. @DataProvider and @Parameters: Refer 'Parameterizing in Selenium' sheet for details.
+
 
 
 
