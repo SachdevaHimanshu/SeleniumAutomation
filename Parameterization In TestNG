@@ -1,4 +1,4 @@
-Parameterization in Selenium
+Parameterization in Selenium: Parameterization is required to create Data Driven Testing.
 Parameterization is passing different set of values to the test script or functions at the run time.
 Many a times a particular funtionality or feature (Eg Login) has to be tested with multiple set of values hence the test script of that 
 funtionality or feature is passed with all permutations and combinations of those values.
@@ -47,17 +47,19 @@ It has only one attribute 'name'. If you do not specify the name attribute then 
 Data provider returns a two-dimensional JAVA object (Object [M][N] )to the test method.
 Where M is the number of times the values will be provided and N is the number of values that will be provided.
  For example, if the DataProvider returns an array of 3*2 objects, the corresponding testcase will be invoked 3 times with 2 parameters each time.
-
+	
+	
 	@DataProvider(name="UsernamePasswordList")
-	public Object[][] GetUsernamePasswordList() throws IOException
+	public static Object[][] GetUsernamePasswordList() throws IOException
 	{	
 		Object[][] data=GetDataFromExcel();
 		return data;	
 	}
 	
-	//Below method is calling the data provider method
+	//Below method is calling the data provider method, hence dataProvider attribute is mentioned for @Test annotation
 	@Test(dataProvider = "UsernamePasswordList")
 	public void SubmitCorrectEmailTest(String Username, String Password)
 	{
 		System.out.println(Username + Password);
 	}
+Important points:
