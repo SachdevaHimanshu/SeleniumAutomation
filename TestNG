@@ -3,7 +3,13 @@ TestNG is a powerful testing framework, an enhanced version of JUnit. NG stands 
 #TestNG provides Powerful and wide variety of annotations to support your test cases.
 Annotations are placed just above the methods. Annotations describes and defines how the methods will be executed.
 
-#@Test The most important annotation in TestNG framework all the functionalities that needs to be tested are kept inside the @Test annotation method.
+#@Test : Most important annotation in TestNG framework. All the functionalities that needs to be tested are kept inside the @Test annotated method.
+
+Attributes associated with the TestNG annotation are:
+1. @Test(description=”This test validates login functionality”)
+2. Priority: You can prioritize the order of execution of your test methods by defining a priority.
+   @Test(priority=1)
+
 
 Other annotations are :
 @BeforeMethod and @AfterMethod – These annotations run before and after each test method.
