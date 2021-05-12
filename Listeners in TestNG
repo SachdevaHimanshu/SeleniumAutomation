@@ -1,7 +1,8 @@
 Listeners in TestNG
 TestNG listeners are the piece of code that listens to the events occurring in the TestNG.
 Events like Pass, Fail, Skip of testcases.
-If the event matches the event for which we want the listener to listen, it executes the code, whch ultimately results in modifying the default behavior of TestNG.
+If the event matches the event for which we want the listener to listen, it executes the code.
+Listeners are activated either before the test or after the test case. It is an interface that modifies the TestNG behavior.
 
 ITestListener In TestNG
 ITestListener is an Interface hence create a Class that will implements ITestListener and override all its methods.
