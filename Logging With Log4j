@@ -50,7 +50,7 @@ Steps to integrate Log4j with project.
 				<version>2.14.1</version>
 			</dependency>
       
-2. Create a new XML file – log4j.xml and place it under the Project root folder.
+2. Create a new XML file – log4j.xml and place it under the Project root folder: src\test\resources
 3) Paste the following code in the log4j.xml file.
 
 <?xml version="1.0" encoding="UTF-8"?>
