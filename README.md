@@ -8,5 +8,6 @@ The below mentioned Components are used and integrated with each other to Build 
 1. MAVEN: Maven is used as a Project Management tool which provides a standard project structure. The src/main/java directory contains the project source code, the src/test/java directory contains the test source, and the pom.xml file is the project's configuration file that contains the majority of information required to build a project in just the way you want.
 2. CUCUMBER: Cucumber is a testing tool that supports Behavior Driven Development (BDD). Cucumber is used for Acceptance Testing.
 3. TESTNG: 
+4. Log4j
 
 The components 
