@@ -57,7 +57,7 @@ public class NewsPageTest extends TestBase{
 		AssertJUnit.assertEquals(PopUpMessage, "Please enter a valid email");
 	}
 	@DataProvider
-	public Object[][] GetEmailIdList() throws IOException
+	public static Object[][] GetEmailIdList() throws IOException
 	{
 		
 		Object[][] data=GetDataFromExcel();

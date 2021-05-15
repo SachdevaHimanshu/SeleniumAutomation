@@ -13,7 +13,8 @@ import cucumber.api.junit.Cucumber;
 		glue="StepDefinitions" ,
 				//this is just the package name. as it is expected feature and definition will be under src/test/java
 				//for only executing 1 feature give full name : src/test/resources/Features/SignIn.feature
-				format = {"pretty", "html:target/Destination"}
+				format = {"pretty", "html:target/Destination"},
+				tags = {"@End2End", "@Regression"}
 		)
 public class TestRunner 
 {

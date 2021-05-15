@@ -81,7 +81,7 @@ public class TestBase {
 		
 	}
 	
-	public Object[][] GetDataFromExcel() throws IOException
+	public static Object[][] GetDataFromExcel() throws IOException
 	{
 		
 		FileInputStream fis=new FileInputStream("C:\\Users\\Himanshu\\Desktop\\Email Address list.xlsx");
