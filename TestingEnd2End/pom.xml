@@ -5,18 +5,63 @@
 	<groupId>com.PracticeAtHome</groupId>
 	<artifactId>TestingEnd2End</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<!-- Command: mvn test was successfull only after adding below properties 
+		command -->
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.0.0-M5</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+	<profiles>
+
+		<profile>
+			<id>Regression</id>
+			
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>3.0.0-M5</version>
+
+							<configuration>
+								<suiteXmlFiles>
+									<suiteXmlFile>AllPagesTestNg.xml</suiteXmlFile>
+								</suiteXmlFiles>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+
+
+		<profile>
+			<id>Smoke</id>
+			
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>3.0.0-M5</version>
+
+							<configuration>
+								<suiteXmlFiles>
+									<suiteXmlFile>SignInPageTestNg.xml</suiteXmlFile>
+								</suiteXmlFiles>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+
+	</profiles>
+
+
 
 
 	<dependencies>
@@ -34,7 +79,9 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.3.0</version>
-			<scope>test</scope>
+			<scope>compile</scope>
+			<!-- changing the scopr from test to compile as it was throwing error 
+				while mvn compile command -->
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
@@ -63,6 +110,7 @@
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
 			<version>1.2.0</version>
+			<scope>test</scope>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
