@@ -65,3 +65,21 @@ Suppose there are 2 testng.xml file , one for regression and one for smoke testi
 then we can create 2 profiles , one for each.
 And run command : test -PRegression or test -PSmoke
 
+Build Lifecycle Basics : https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
+
+
+ Maven Goal
+ Each phase is a sequence of goals, and each goal is responsible for a specific task.
+ When we run a phase – all goals bound to this phase are executed in order.
+ Here are some of the phases and default goals bound to them:
+
+compiler:compile – the compile goal from the compiler plugin is bound to the compile phase
+compiler:testCompile is bound to the test-compile phase
+surefire:test is bound to test phase
+install:install is bound to install phase
+jar:jar and war:war is bound to package phase
+We can list all goals bound to a specific phase and their plugins using the command:
+mvn help:describe -Dcmd=PHASENAME
+For example, to list all goals bound to the compile phase, we can run:
+
+mvn help:describe -Dcmd=compile
