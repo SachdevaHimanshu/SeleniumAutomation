@@ -1,0 +1,43 @@
+Maven is a powerful Project Management and build management tool. It provides following features and advantage.
+1. Central repository to get dependencies.
+2. Maintaining common project structure across the organizatiom: The src/main/java directory contains the project source code, the src/test/java directory contains 
+the test source, and the pom.xml file is the configuration file.
+3. Flexibility in integrating with CI tools like Jenkins. 
+
+Maven POM
+POM is a Project Object Model XML file that contains information about the project and configuration details used by Maven to build the project. 
+It contains default values for most projects. Some of the configurations that can be specified in the POM are the project dependencies, 
+the plugins or goals that can be executed, the build profiles, and so on.
+
+Surefire Plugin
+The Surefire Plugin is used during the test phase of the build lifecycle to execute the unit tests of an application. It generates reports in 2 different file formats:
+1. Plain text files (*.txt)
+2. XML files (*.xml)
+By default, these files are generated in ${basedir}/target/surefire-reports/TEST-*.xml.
+
+Note: The Surefire Plugin has only one goal: surefire:test -runs the unit tests of an application.
+The Surefire Plugin can be invoked by calling the test phase of the build lifecycle: mvn test
+This plugin will help to execute all the test cases present in test folder: src/test/java where the class name is ending with Test keyword
+
+maven commands: clean
+compile: checks syntax errors of code
+test: if command test is given then maven first compiles then test.
+
+<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>3.0.0-M5</version>
+					
+					<configuration>
+						<suiteXmlFiles>
+							<suiteXmlFile>SignInPageTestNg.xml</suiteXmlFile>
+						</suiteXmlFiles>
+					</configuration>
+          
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
