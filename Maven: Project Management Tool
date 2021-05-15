@@ -25,7 +25,7 @@ But if there is a .java class that is not following the above naming convention 
             <include>Sample.java</include>
           </includes>
         </configuration>
-	and to exclude use below:
+And to exclude use below:
 	<configuration>
           <excludes>
             <exclude>**/TestCircle.java</exclude>
@@ -58,3 +58,10 @@ Using Suite XML Files: Another alternative is to use TestNG suite XML files. Thi
 			</plugins>
 		</pluginManagement>
 	</build>
+
+Profiling in Maven.
+Within build tag we can tell sure fire plugin which Testng.xml file to run.
+Suppose there are 2 testng.xml file , one for regression and one for smoke testing.
+then we can create 2 profiles , one for each.
+And run command : test -PRegression or test -PSmoke
+
