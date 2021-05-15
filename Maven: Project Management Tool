@@ -17,11 +17,28 @@ By default, these files are generated in ${basedir}/target/surefire-reports/TEST
 
 Note: The Surefire Plugin has only one goal: surefire:test -runs the unit tests of an application.
 The Surefire Plugin can be invoked by calling the test phase of the build lifecycle: mvn test
-This plugin will help to execute all the test cases present in test folder: src/test/java where the class name is ending with Test keyword
+This plugin will help to execute all the test cases present in test folder: src/test/java.
+As long as they are named in accordance with the defaults such as *Test.java they will be run by Surefire as TestNG tests.
+But if there is a .java class that is not following the above naming convention but still needs to be inluded then use below.
+        <configuration>
+          <includes>
+            <include>Sample.java</include>
+          </includes>
+        </configuration>
+	and to exclude use below:
+	<configuration>
+          <excludes>
+            <exclude>**/TestCircle.java</exclude>
+            <exclude>**/TestSquare.java</exclude>
+          </excludes>
+        </configuration>
+
 
 maven commands: clean
 compile: checks syntax errors of code
 test: if command test is given then maven first compiles then test.
+
+Using Suite XML Files: Another alternative is to use TestNG suite XML files. This allows flexible configuration of the tests to be run. 
 
 <build>
 		<pluginManagement>
