@@ -1,4 +1,23 @@
 Jenkins: Continous Integration and Continuous Delivery.
-When our automated tests are ready we club all required tests and run those tests either by running Testng.xml or running POM.xml file manually by using run as in eclipse.
+When our automated tests are ready we club all required tests and run those tests either by running Testng.xml or running POM.xml(maven command) file manually by using run as in eclipse.
 This is also a manual task which needs to be automated. If a set of test cases are supposed to be run daily at mid night to as to receive the report
-in morning we should not be running test manually in eclipse.
+in morning we should not be running test manually in eclipse at mid night.
+The solution is to create/Schedule a JOB in Jenkins. 
+
+Jenkins facilitates continuous integration and continuous delivery in software projects by automating parts related to build, test, and deployment.
+
+
+Install and Configure Jenkins in local system.
+
+Download jenkins.war file and place it in an Folder like : Documents
+
+Starting Jenkins: 
+1. Open the command prompt. From the command prompt, browse to the directory where the jenkins.war file is present.
+cd C:\Users\Himanshu\Documents\Jenkins
+2. Run the following command
+java -jar jenkins.war -httpPort=8080
+3. Open Chrome and enter URL: http://localhost:8080/
+4.  Enter Username : Himansach and Password: ***
+
+
+
