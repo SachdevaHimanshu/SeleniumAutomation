@@ -19,5 +19,16 @@ java -jar jenkins.war -httpPort=8080
 3. Open Chrome and enter URL: http://localhost:8080/
 4.  Enter Username : Himansach and Password: ***
 
+Jenkins Plugins
+Jenkins achieves Continuous Integration with the help of plugins. Plugins allow the integration of Various DevOps stages.
+By default, Jenkins comes with a limited set of features. If you want to integrate your Jenkins installation with version control tools like Git, 
+then you need to install plugins related to Git. In fact, for integration with tools like Maven, Amazon EC2, you need to install respective plugins in your Jenkins.
+
+Architecture Of Jenkins
+
+
+What Is Jenkins Pipeline?
+
+
 
 
