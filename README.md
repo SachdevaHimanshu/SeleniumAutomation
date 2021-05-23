@@ -9,5 +9,6 @@ The below mentioned Components are used and integrated with each other to Build 
 2. CUCUMBER: Cucumber is a testing tool that supports Behavior Driven Development (BDD). Cucumber is used for Acceptance Testing.
 3. TESTNG: 
 4. Log4j
+5. Jenkins
 
 The components 
