@@ -10,5 +10,5 @@ The below mentioned Components are used and integrated with each other to Build 
 3. TESTNG: 
 4. Log4j
 5. Jenkins
-
+fr
 The components 
